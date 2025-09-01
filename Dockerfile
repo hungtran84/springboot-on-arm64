@@ -7,10 +7,9 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Runtime stage with multi-arch support
-FROM --platform=$TARGETPLATFORM eclipse-temurin:17-jre-alpine
+FROM --platform=$TARGETPLATFORM openjdk:17-jre-slim
 WORKDIR /app
-RUN addgroup -g 1001 -S appgroup && \
-    adduser -u 1001 -S appuser -G appgroup
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 COPY --from=build /app/target/springboot-helloworld-*.jar app.jar
 RUN chown appuser:appgroup app.jar
 USER appuser:appgroup
