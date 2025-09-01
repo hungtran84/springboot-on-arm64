@@ -1,6 +1,6 @@
 # Spring Boot Hello World on ARM64
 
-A simple Spring Boot Hello World application designed to run on both x64 and ARM64 architectures using distroless containers.
+A simple Spring Boot Hello World application designed to run on both x64 and ARM64 architectures using multi-architecture containers.
 
 ## Features
 
@@ -78,9 +78,9 @@ The GitHub Actions workflow includes:
 
 ## Security Features
 
-- Uses Google's distroless Java 17 base image
-- Minimal container surface with no shell or package manager
-- Non-root user execution
+- Uses Eclipse Temurin Java 17 JRE Alpine base image
+- Multi-architecture support (x64 and ARM64)
+- Non-root user execution for security
 - Multi-stage build to reduce image size
 
 ## Project Structure
