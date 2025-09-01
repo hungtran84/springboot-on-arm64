@@ -78,7 +78,7 @@ The GitHub Actions workflow includes:
 
 ## Security Features
 
-- Uses OpenJDK 17 JRE Slim base image
+- Uses Eclipse Temurin Java 17 JRE base image
 - Multi-architecture support (x64 and ARM64)
 - Non-root user execution for security
 - Multi-stage build to reduce image size

@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Runtime stage with multi-arch support
-FROM --platform=$TARGETPLATFORM openjdk:17-jre-slim
+FROM --platform=$TARGETPLATFORM eclipse-temurin:17-jre
 WORKDIR /app
 RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 COPY --from=build /app/target/springboot-helloworld-*.jar app.jar
